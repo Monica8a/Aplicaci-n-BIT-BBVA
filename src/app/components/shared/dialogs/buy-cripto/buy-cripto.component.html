@@ -1,0 +1,103 @@
+<div>
+  <div class="mt-0 mb-3">
+    <div class="font-weight-bold p-t-5 p-l-10 font-17" style="text-align: center;">
+      <h3>Comprar Criptomonedas</h3>
+      <fa-icon [icon]="faEuroSign" size="4x" primaryColor="blue"  secondaryColor="blue" class="animate__animated animate__zoomIn"></fa-icon>
+    </div>
+  </div>
+  
+  <div mat-dialog-content class="">
+  
+    <div class="row  justify-content-center">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+        <div style="text-align: center;" class="">
+          <p><strong>LLena los siguientes campos</strong></p>
+
+          <form class="register-form m-4" [formGroup]="advanceTableForm" (ngSubmit)="submit()">
+
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field appearance="fill">
+                  <mat-label>Usuario</mat-label> 
+                  <mat-select formControlName="user" name="user" style="color: #fff;">
+                    <mat-option >--</mat-option>
+                    <mat-option *ngFor="let user of data.users" [value]="user">
+                      <strong >{{user}}</strong>
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field appearance="fill">
+                  <mat-label>Accion</mat-label> 
+                  <mat-select formControlName="action" name="action" style="color: #fff;">
+                    <mat-option >--</mat-option>
+                    <mat-option *ngFor="let action of data.action" [value]="action">
+                      <strong >{{action}}</strong>
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field appearance="fill">
+                  <mat-label>Tipo</mat-label> 
+                  <mat-select formControlName="type" name="type" style="color: #fff;">
+                    <mat-option >--</mat-option>
+                    <mat-option *ngFor="let type of data.type" [value]="type">
+                      <strong >{{type}}</strong>
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field appearance="fill">
+                  <mat-label>Descripción</mat-label> 
+                  <textarea matInput formControlName="description"> </textarea>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field appearance="fill">
+                  <mat-label>Cantidad</mat-label> 
+                  <input matInput type="number" formControlName="amount">
+                </mat-form-field>
+              </div>
+            </div>
+
+          </form>
+
+<!-- 
+          <mat-form-field appearance="fill">
+            <mat-label>Dispositivo a visualizar</mat-label> 
+            <mat-select  [(ngModel)]="selectedValue" name="device">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let device of data.devices" [value]="device">
+                <strong>{{device.alias}}</strong>: {{device.serial}} 
+              </mat-option>
+            </mat-select>
+          </mat-form-field> -->
+        </div>
+      </div>
+    </div>
+  
+    <div class="row justify-content-center">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+        <div class="" style="text-align:center;">
+          <button mat-raised-button color="primary" [disabled]="advanceTableForm.invalid" [mat-dialog-close]="advanceTableForm">Aceptar</button>
+          <button mat-raised-button class="ml-3" color="warn" (click)="onNoClick()" tabindex="-1">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

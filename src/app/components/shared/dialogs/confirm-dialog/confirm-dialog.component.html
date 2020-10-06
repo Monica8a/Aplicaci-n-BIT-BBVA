@@ -1,0 +1,33 @@
+<div>
+  <div class="mt-0 mb-3">
+    <div class="font-weight-bold p-t-5 p-l-10 font-17" style="text-align: center;">
+      <h3>¿Estas seguro?</h3>
+      <fa-icon [icon]="icon" size="4x" primaryColor="blue"  secondaryColor="blue" class="animate__animated animate__zoomIn"></fa-icon>
+    </div>
+  </div>
+  
+  <div mat-dialog-content class="">
+  
+    <div class="row  justify-content-center">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+        <div style="color: black;" class="">
+          <p><strong> Tu pedido: </strong></p>
+          <ul>
+            <li> <strong>Moneda:</strong>  {{data.type}}    </li>
+            <li> <strong>Cantidad:</strong>  {{data.amount}} </li>
+            <li> <strong>Total:</strong> {{data.total}}$  </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row justify-content-center">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+        <div class="example-button-row" style="text-align:center;">
+          <button mat-raised-button color="primary" [disabled]="" [mat-dialog-close]="1">Aceptar</button>
+          <button mat-raised-button color="warn" class="ml-3" (click)="onNoClick()" tabindex="-1">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
